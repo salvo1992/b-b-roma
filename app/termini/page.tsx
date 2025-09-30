@@ -32,7 +32,7 @@ export default function TerminiPage() {
           </div>
 
           <div className="space-y-8">
-            <Card className="card-enhanced">
+            <Card className="card-invisible">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-primary">
                   <FileText className="w-5 h-5" />
@@ -51,7 +51,7 @@ export default function TerminiPage() {
               </CardContent>
             </Card>
 
-            <Card className="card-enhanced">
+            <Card className="card-invisible">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-primary">
                   <Calendar className="w-5 h-5" />
@@ -80,7 +80,7 @@ export default function TerminiPage() {
               </CardContent>
             </Card>
 
-            <Card className="card-enhanced">
+            <Card className="card-invisible">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-primary">
                   <CreditCard className="w-5 h-5" />
@@ -108,7 +108,7 @@ export default function TerminiPage() {
               </CardContent>
             </Card>
 
-            <Card className="card-enhanced">
+            <Card className="card-invisible">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-primary">
                   <AlertTriangle className="w-5 h-5" />
@@ -137,7 +137,7 @@ export default function TerminiPage() {
               </CardContent>
             </Card>
 
-            <Card className="card-enhanced">
+            <Card className="card-invisible">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-primary">
                   <Scale className="w-5 h-5" />
@@ -153,7 +153,7 @@ export default function TerminiPage() {
               </CardContent>
             </Card>
 
-            <Card className="card-enhanced bg-gradient-to-br from-primary/5 to-accent/5">
+            <Card className="card-invisible bg-gradient-to-br from-primary/5 to-accent/5">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-primary">
                   <Mail className="w-5 h-5" />

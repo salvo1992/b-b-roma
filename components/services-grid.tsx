@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Clock, Users, Star, Phone, Heart, Share2 } from "lucide-react"
@@ -172,10 +171,10 @@ export function ServicesGrid() {
         {/* Enhanced Services Grid */}
         <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {filteredServices.map((service, index) => (
-            <Card
+            <div
               key={service.id}
               data-index={index}
-              className={`group overflow-hidden card-enhanced transition-all duration-500 hover:shadow-2xl ${
+              className={`group overflow-hidden card-invisible transition-all duration-500 hover:shadow-2xl ${
                 visibleItems.has(index) ? "animate-fade-in-up" : "opacity-0 translate-y-10"
               }`}
               style={{ animationDelay: `${index * 0.1}s` }}
@@ -234,7 +233,7 @@ export function ServicesGrid() {
                 </div>
               </div>
 
-              <CardContent className="p-6">
+              <div className="p-6">
                 <div className="flex items-start justify-between mb-3">
                   <h3 className="font-bold text-xl text-foreground group-hover:text-primary transition-colors line-clamp-2 leading-tight">
                     {service.name}
@@ -285,8 +284,8 @@ export function ServicesGrid() {
                     <Phone className="w-4 h-4" />
                   </Button>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           ))}
         </div>
 

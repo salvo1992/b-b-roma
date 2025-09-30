@@ -1,7 +1,6 @@
 "use client"
 
 import Image from "next/image"
-import { Card } from "@/components/ui/card"
 import { Heart, Award, Users, Calendar } from "lucide-react"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 
@@ -118,8 +117,8 @@ export function StorySection() {
           >
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
-                <Card
-                  className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105 animate-fade-in-up"
+                <div
+                  className="card-invisible overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105 animate-fade-in-up"
                   style={{ animationDelay: "1s" }}
                 >
                   <Image
@@ -129,9 +128,9 @@ export function StorySection() {
                     height={200}
                     className="w-full h-48 object-cover hover:scale-110 transition-transform duration-500"
                   />
-                </Card>
-                <Card
-                  className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105 animate-fade-in-up"
+                </div>
+                <div
+                  className="card-invisible overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105 animate-fade-in-up"
                   style={{ animationDelay: "1.2s" }}
                 >
                   <Image
@@ -141,11 +140,11 @@ export function StorySection() {
                     height={150}
                     className="w-full h-32 object-cover hover:scale-110 transition-transform duration-500"
                   />
-                </Card>
+                </div>
               </div>
               <div className="space-y-4 pt-8">
-                <Card
-                  className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105 animate-fade-in-up"
+                <div
+                  className="card-invisible overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105 animate-fade-in-up"
                   style={{ animationDelay: "1.4s" }}
                 >
                   <Image
@@ -155,9 +154,9 @@ export function StorySection() {
                     height={150}
                     className="w-full h-32 object-cover hover:scale-110 transition-transform duration-500"
                   />
-                </Card>
-                <Card
-                  className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105 animate-fade-in-up"
+                </div>
+                <div
+                  className="card-invisible overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105 animate-fade-in-up"
                   style={{ animationDelay: "1.6s" }}
                 >
                   <Image
@@ -167,7 +166,7 @@ export function StorySection() {
                     height={200}
                     className="w-full h-48 object-cover hover:scale-110 transition-transform duration-500"
                   />
-                </Card>
+                </div>
               </div>
             </div>
 

@@ -177,7 +177,7 @@ export default function AdminPage() {
             {/* Dashboard Overview */}
             <TabsContent value="dashboard" className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <Card className="card-enhanced animate-bounce-in">
+                <Card className="card-invisible animate-bounce-in">
                   <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                     <CardTitle className="text-sm font-medium">Prenotazioni Oggi</CardTitle>
                     <Calendar className="h-4 w-4 text-muted-foreground" />
@@ -188,7 +188,7 @@ export default function AdminPage() {
                   </CardContent>
                 </Card>
 
-                <Card className="card-enhanced animate-bounce-in" style={{ animationDelay: "0.1s" }}>
+                <Card className="card-invisible animate-bounce-in" style={{ animationDelay: "0.1s" }}>
                   <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                     <CardTitle className="text-sm font-medium">Camere Occupate</CardTitle>
                     <Bed className="h-4 w-4 text-muted-foreground" />
@@ -199,7 +199,7 @@ export default function AdminPage() {
                   </CardContent>
                 </Card>
 
-                <Card className="card-enhanced animate-bounce-in" style={{ animationDelay: "0.2s" }}>
+                <Card className="card-invisible animate-bounce-in" style={{ animationDelay: "0.2s" }}>
                   <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                     <CardTitle className="text-sm font-medium">Ricavi Mensili</CardTitle>
                     <Euro className="h-4 w-4 text-muted-foreground" />
@@ -210,7 +210,7 @@ export default function AdminPage() {
                   </CardContent>
                 </Card>
 
-                <Card className="card-enhanced animate-bounce-in" style={{ animationDelay: "0.3s" }}>
+                <Card className="card-invisible animate-bounce-in" style={{ animationDelay: "0.3s" }}>
                   <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                     <CardTitle className="text-sm font-medium">Valutazione Media</CardTitle>
                     <TrendingUp className="h-4 w-4 text-muted-foreground" />
@@ -223,7 +223,7 @@ export default function AdminPage() {
               </div>
 
               <div className="grid lg:grid-cols-2 gap-6">
-                <Card className="card-enhanced animate-slide-in-left">
+                <Card className="card-invisible animate-slide-in-left">
                   <CardHeader>
                     <CardTitle className="font-cinzel text-primary">Prenotazioni Recenti</CardTitle>
                   </CardHeader>
@@ -248,7 +248,7 @@ export default function AdminPage() {
                   </CardContent>
                 </Card>
 
-                <Card className="card-enhanced animate-slide-in-right">
+                <Card className="card-invisible animate-slide-in-right">
                   <CardHeader>
                     <CardTitle className="font-cinzel text-primary">Stato Camere</CardTitle>
                   </CardHeader>
@@ -276,7 +276,7 @@ export default function AdminPage() {
 
             {/* Bookings Management */}
             <TabsContent value="bookings" className="space-y-6">
-              <Card className="card-enhanced animate-fade-in-up">
+              <Card className="card-invisible animate-fade-in-up">
                 <CardHeader>
                   <CardTitle className="font-cinzel text-primary">Gestione Prenotazioni</CardTitle>
                   <CardDescription>Visualizza e gestisci tutte le prenotazioni</CardDescription>
@@ -336,7 +336,7 @@ export default function AdminPage() {
 
             {/* Rooms Management */}
             <TabsContent value="rooms" className="space-y-6">
-              <Card className="card-enhanced animate-fade-in-up">
+              <Card className="card-invisible animate-fade-in-up">
                 <CardHeader>
                   <CardTitle className="font-cinzel text-primary">Gestione Camere</CardTitle>
                   <CardDescription>Monitora lo stato e le prenotazioni delle camere</CardDescription>
@@ -399,7 +399,7 @@ export default function AdminPage() {
 
             {/* Guests Management */}
             <TabsContent value="guests" className="space-y-6">
-              <Card className="card-enhanced animate-fade-in-up">
+              <Card className="card-invisible animate-fade-in-up">
                 <CardHeader>
                   <CardTitle className="font-cinzel text-primary">Gestione Ospiti</CardTitle>
                   <CardDescription>Database degli ospiti e storico soggiorni</CardDescription>
@@ -443,7 +443,7 @@ export default function AdminPage() {
             {/* Settings */}
             <TabsContent value="settings" className="space-y-6">
               <div className="grid lg:grid-cols-2 gap-6">
-                <Card className="card-enhanced animate-slide-in-left">
+                <Card className="card-invisible animate-slide-in-left">
                   <CardHeader>
                     <CardTitle className="font-cinzel text-primary">Impostazioni B&B</CardTitle>
                     <CardDescription>Configura le informazioni del tuo B&B</CardDescription>
@@ -471,7 +471,7 @@ export default function AdminPage() {
                   </CardContent>
                 </Card>
 
-                <Card className="card-enhanced animate-slide-in-right">
+                <Card className="card-invisible animate-slide-in-right">
                   <CardHeader>
                     <CardTitle className="font-cinzel text-primary">Orari e Politiche</CardTitle>
                     <CardDescription>Gestisci orari di check-in/out e politiche</CardDescription>

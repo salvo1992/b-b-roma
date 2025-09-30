@@ -153,7 +153,7 @@ export default function CookiePage() {
           </div>
 
           <div className="space-y-8">
-            <Card className="card-enhanced bg-gradient-to-br from-primary/5 to-accent/5">
+            <Card className="card-invisible bg-gradient-to-br from-primary/5 to-accent/5">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-primary">
                   <Settings className="w-5 h-5" />
@@ -234,7 +234,7 @@ export default function CookiePage() {
               </CardContent>
             </Card>
 
-            <Card className="card-enhanced">
+            <Card className="card-invisible">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-primary">
                   <Cookie className="w-5 h-5" />
@@ -250,7 +250,7 @@ export default function CookiePage() {
               </CardContent>
             </Card>
 
-            <Card className="card-enhanced">
+            <Card className="card-invisible">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-primary">
                   <Settings className="w-5 h-5" />
@@ -271,7 +271,7 @@ export default function CookiePage() {
               </CardContent>
             </Card>
 
-            <Card className="card-enhanced">
+            <Card className="card-invisible">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-primary">
                   <BarChart className="w-5 h-5" />
@@ -292,7 +292,7 @@ export default function CookiePage() {
               </CardContent>
             </Card>
 
-            <Card className="card-enhanced">
+            <Card className="card-invisible">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-primary">
                   <Eye className="w-5 h-5" />
@@ -313,7 +313,7 @@ export default function CookiePage() {
               </CardContent>
             </Card>
 
-            <Card className="card-enhanced bg-gradient-to-br from-primary/5 to-accent/5">
+            <Card className="card-invisible bg-gradient-to-br from-primary/5 to-accent/5">
               <CardContent className="p-6">
                 <div className="text-center">
                   <h3 className="font-cinzel text-lg font-semibold text-primary mb-3">Hai Domande sui Cookie?</h3>

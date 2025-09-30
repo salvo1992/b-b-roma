@@ -69,7 +69,6 @@ export default function ContactsPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     console.log("Contact form submitted:", formData)
-    // Here you would typically send the data to your backend
   }
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -100,18 +99,20 @@ export default function ContactsPage() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 mb-16">
-            {/* Contact Form */}
-            <Card className="card-enhanced animate-slide-in-left">
-              <CardHeader>
-                <CardTitle className="text-2xl font-cinzel text-primary">Invia un Messaggio</CardTitle>
-                <CardDescription>Compila il modulo e ti risponderemo entro 24 ore</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-4">
+          <div className="grid lg:grid-cols-5 gap-6 mb-12">
+            {/* Contact Form - Reduced width */}
+            <div className="lg:col-span-2">
+              <Card className="card-semi-transparent animate-slide-in-left">
+                <CardHeader className="pb-4">
+                  <CardTitle className="text-xl font-cinzel text-primary">Invia un Messaggio</CardTitle>
+                  <CardDescription className="text-sm">Ti risponderemo entro 24 ore</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
-                      <Label htmlFor="name">Nome Completo</Label>
+                      <Label htmlFor="name" className="text-sm">
+                        Nome Completo
+                      </Label>
                       <Input
                         id="name"
                         name="name"
@@ -121,8 +122,11 @@ export default function ContactsPage() {
                         className="mt-1"
                       />
                     </div>
+
                     <div>
-                      <Label htmlFor="email">Email</Label>
+                      <Label htmlFor="email" className="text-sm">
+                        Email
+                      </Label>
                       <Input
                         id="email"
                         name="email"
@@ -133,156 +137,133 @@ export default function ContactsPage() {
                         className="mt-1"
                       />
                     </div>
-                  </div>
 
-                  <div>
-                    <Label htmlFor="subject">Oggetto</Label>
-                    <Input
-                      id="subject"
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleInputChange}
-                      required
-                      className="mt-1"
-                    />
-                  </div>
-
-                  <div>
-                    <Label htmlFor="message">Messaggio</Label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      placeholder="Scrivi qui il tuo messaggio..."
-                      className="mt-1"
-                      rows={6}
-                      required
-                    />
-                  </div>
-
-                  <Button
-                    type="submit"
-                    className="w-full bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-lg py-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-                  >
-                    <Send className="h-5 w-5 mr-2" />
-                    Invia Messaggio
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
-
-            {/* Contact Information */}
-            <div className="space-y-6 animate-slide-in-right">
-              <Card className="card-enhanced">
-                <CardHeader>
-                  <CardTitle className="text-xl font-cinzel text-primary flex items-center gap-2">
-                    <MapPin className="h-5 w-5" />
-                    Dove Siamo
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
                     <div>
-                      <p className="font-medium">Villa Bella Vista</p>
-                      <p className="text-muted-foreground">Via dei Colli Romani, 123</p>
-                      <p className="text-muted-foreground">00100 Roma, Italia</p>
+                      <Label htmlFor="subject" className="text-sm">
+                        Oggetto
+                      </Label>
+                      <Input
+                        id="subject"
+                        name="subject"
+                        value={formData.subject}
+                        onChange={handleInputChange}
+                        required
+                        className="mt-1"
+                      />
                     </div>
-                    <div className="bg-muted/50 p-4 rounded-lg">
-                      <p className="text-sm font-medium mb-2">Come Raggiungerci:</p>
-                      <ul className="text-sm space-y-1 text-muted-foreground">
-                        <li>• Aeroporto Fiumicino: 45 min in auto</li>
-                        <li>• Stazione Termini: 20 min in metro</li>
-                        <li>• Colosseo: 15 min a piedi</li>
-                        <li>• Vaticano: 25 min in autobus</li>
-                      </ul>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
 
-              <Card className="card-enhanced">
-                <CardHeader>
-                  <CardTitle className="text-xl font-cinzel text-primary flex items-center gap-2">
-                    <Phone className="h-5 w-5" />
-                    Contatti Diretti
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="flex items-center gap-3 p-3 bg-muted/30 rounded-lg hover:bg-muted/50 transition-colors">
-                    <Phone className="h-5 w-5 text-primary" />
                     <div>
-                      <p className="font-medium">+39 06 1234 5678</p>
-                      <p className="text-sm text-muted-foreground">Disponibile 24/7</p>
+                      <Label htmlFor="message" className="text-sm">
+                        Messaggio
+                      </Label>
+                      <Textarea
+                        id="message"
+                        name="message"
+                        value={formData.message}
+                        onChange={handleInputChange}
+                        placeholder="Scrivi qui il tuo messaggio..."
+                        className="mt-1"
+                        rows={4}
+                        required
+                      />
                     </div>
-                  </div>
-                  <div className="flex items-center gap-3 p-3 bg-muted/30 rounded-lg hover:bg-muted/50 transition-colors">
-                    <Mail className="h-5 w-5 text-primary" />
-                    <div>
-                      <p className="font-medium">info@villabellavista.it</p>
-                      <p className="text-sm text-muted-foreground">Risposta entro 24h</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
 
-              <Card className="card-enhanced">
-                <CardHeader>
-                  <CardTitle className="text-xl font-cinzel text-primary flex items-center gap-2">
-                    <Clock className="h-5 w-5" />
-                    Orari di Ricevimento
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-3">
-                    <div className="flex justify-between items-center py-2 border-b border-border/50">
-                      <span className="font-medium">Lunedì - Venerdì</span>
-                      <span className="text-muted-foreground">08:00 - 22:00</span>
-                    </div>
-                    <div className="flex justify-between items-center py-2 border-b border-border/50">
-                      <span className="font-medium">Sabato - Domenica</span>
-                      <span className="text-muted-foreground">09:00 - 21:00</span>
-                    </div>
-                    <div className="flex justify-between items-center py-2">
-                      <span className="font-medium">Check-in/Check-out</span>
-                      <span className="text-muted-foreground">24/7</span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="card-enhanced bg-gradient-to-br from-primary/5 to-accent/5">
-                <CardContent className="p-6">
-                  <h3 className="font-cinzel text-lg font-semibold text-primary mb-3">Servizio Concierge</h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Il nostro team è a disposizione per aiutarti con prenotazioni ristoranti, tour guidati,
-                    trasferimenti e qualsiasi altra esigenza durante il tuo soggiorno.
-                  </p>
-                  <Button variant="outline" className="w-full bg-transparent">
-                    Scopri i Servizi
-                  </Button>
+                    <Button
+                      type="submit"
+                      className="w-full bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 py-5 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                    >
+                      <Send className="h-4 w-4 mr-2" />
+                      Invia
+                    </Button>
+                  </form>
                 </CardContent>
               </Card>
             </div>
+
+            <div className="lg:col-span-3 grid sm:grid-cols-2 gap-4 animate-slide-in-right">
+              <div className="card-invisible p-5">
+                <div className="flex items-start gap-3">
+                  <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                  <div>
+                    <h3 className="font-cinzel font-semibold text-primary mb-2 text-base">Dove Siamo</h3>
+                    <p className="text-sm font-medium">Villa Bella Vista</p>
+                    <p className="text-sm text-muted-foreground">Via dei Colli Romani, 123</p>
+                    <p className="text-sm text-muted-foreground">00100 Roma, Italia</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="card-invisible p-5">
+                <div className="flex items-start gap-3">
+                  <Phone className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                  <div>
+                    <h3 className="font-cinzel font-semibold text-primary mb-2 text-base">Contatti Diretti</h3>
+                    <div className="space-y-2">
+                      <div>
+                        <p className="text-sm font-medium">+39 06 1234 5678</p>
+                        <p className="text-xs text-muted-foreground">Disponibile 24/7</p>
+                      </div>
+                      <div>
+                        <p className="text-sm font-medium">info@villabellavista.it</p>
+                        <p className="text-xs text-muted-foreground">Risposta entro 24h</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="card-invisible p-5">
+                <div className="flex items-start gap-3">
+                  <Clock className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                  <div className="flex-1">
+                    <h3 className="font-cinzel font-semibold text-primary mb-2 text-base">Orari</h3>
+                    <div className="space-y-1 text-sm">
+                      <div className="flex justify-between gap-2">
+                        <span className="font-medium">Lun - Ven</span>
+                        <span className="text-muted-foreground">08:00 - 22:00</span>
+                      </div>
+                      <div className="flex justify-between gap-2">
+                        <span className="font-medium">Sab - Dom</span>
+                        <span className="text-muted-foreground">09:00 - 21:00</span>
+                      </div>
+                      <div className="flex justify-between gap-2">
+                        <span className="font-medium">Check-in/out</span>
+                        <span className="text-muted-foreground">24/7</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="card-invisible p-5">
+                <h3 className="font-cinzel text-base font-semibold text-primary mb-2">Servizio Concierge</h3>
+                <p className="text-sm text-muted-foreground mb-3">
+                  Il nostro team è a disposizione per aiutarti con prenotazioni ristoranti, tour guidati e
+                  trasferimenti.
+                </p>
+                <Button variant="outline" size="sm" className="w-full bg-transparent text-sm">
+                  Scopri i Servizi
+                </Button>
+              </div>
+            </div>
           </div>
 
-          <div className="mb-16">
-            <Card className="card-enhanced bg-gradient-to-br from-primary/10 to-accent/10 border-primary/20">
-              <CardContent className="p-8">
-                <div className="text-center max-w-2xl mx-auto">
-                  <div className="flex items-center justify-center gap-2 mb-4">
-                    <Mail className="w-6 h-6 text-primary animate-pulse" />
-                    <h2 className="text-2xl font-cinzel font-bold text-primary">Newsletter Esclusiva</h2>
+          <div className="mb-12 max-w-3xl mx-auto">
+            <Card className="card-semi-transparent border-primary/20">
+              <CardContent className="p-5">
+                <div className="text-center">
+                  <div className="flex items-center justify-center gap-2 mb-2">
+                    <Mail className="w-5 h-5 text-primary" />
+                    <h2 className="text-lg font-cinzel font-bold text-primary">Newsletter Esclusiva</h2>
                   </div>
-                  <p className="text-muted-foreground mb-6">
-                    Iscriviti alla nostra newsletter per ricevere offerte speciali, eventi esclusivi e consigli per
-                    scoprire Roma come un vero romano!
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Iscriviti per ricevere offerte speciali ed eventi esclusivi!
                   </p>
 
                   {!isSubscribed ? (
                     <form
                       onSubmit={handleNewsletterSubmit}
-                      className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
+                      className="flex flex-col sm:flex-row gap-2 max-w-md mx-auto"
                     >
                       <Input
                         type="email"
@@ -290,32 +271,32 @@ export default function ContactsPage() {
                         value={newsletterEmail}
                         onChange={(e) => setNewsletterEmail(e.target.value)}
                         required
-                        className="flex-1"
+                        className="flex-1 h-10"
                       />
                       <Button
                         type="submit"
-                        className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 px-8"
+                        size="sm"
+                        className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 h-10"
                       >
                         Iscriviti
                       </Button>
                     </form>
                   ) : (
-                    <div className="bg-green-50 border border-green-200 rounded-lg p-4 max-w-md mx-auto">
+                    <div className="bg-green-50 border border-green-200 rounded-lg p-3 max-w-md mx-auto">
                       <div className="flex items-center justify-center gap-2 text-green-800">
-                        <Heart className="w-5 h-5 fill-current" />
-                        <span className="font-medium">Grazie per l'iscrizione!</span>
+                        <Heart className="w-4 h-4 fill-current" />
+                        <span className="text-sm font-medium">Grazie per l'iscrizione!</span>
                       </div>
-                      <p className="text-green-700 text-sm mt-1">Riceverai presto le nostre offerte esclusive.</p>
                     </div>
                   )}
 
-                  <div className="flex items-center justify-center gap-6 mt-6 text-sm text-muted-foreground">
+                  <div className="flex items-center justify-center gap-4 mt-3 text-xs text-muted-foreground">
                     <div className="flex items-center gap-1">
-                      <Users className="w-4 h-4" />
+                      <Users className="w-3 h-3" />
                       <span>2.500+ iscritti</span>
                     </div>
                     <div className="flex items-center gap-1">
-                      <Award className="w-4 h-4" />
+                      <Award className="w-3 h-3" />
                       <span>Offerte esclusive</span>
                     </div>
                   </div>
@@ -332,32 +313,32 @@ export default function ContactsPage() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
               {reviews.map((review, index) => (
-                <Card key={review.id} className="card-enhanced hover:shadow-lg transition-all duration-300">
-                  <CardContent className="p-6">
-                    <div className="flex items-center justify-between mb-3">
+                <Card key={review.id} className="card-semi-transparent hover:shadow-lg transition-all duration-300">
+                  <CardContent className="p-4">
+                    <div className="flex items-center justify-between mb-2">
                       <div className="flex items-center gap-1">
                         {[...Array(5)].map((_, i) => (
                           <Star
                             key={i}
-                            className={`w-4 h-4 ${
+                            className={`w-3 h-3 ${
                               i < review.rating ? "fill-yellow-400 text-yellow-400" : "text-gray-300"
                             }`}
                           />
                         ))}
                       </div>
                       {review.verified && (
-                        <Badge variant="secondary" className="text-xs bg-green-100 text-green-800">
+                        <Badge variant="secondary" className="text-xs bg-green-100 text-green-800 px-1.5 py-0">
                           Verificata
                         </Badge>
                       )}
                     </div>
-                    <p className="text-sm text-muted-foreground mb-4 line-clamp-4">{review.comment}</p>
-                    <div className="border-t pt-3">
+                    <p className="text-xs text-muted-foreground mb-3 line-clamp-3">{review.comment}</p>
+                    <div className="border-t pt-2">
                       <p className="font-medium text-sm">{review.name}</p>
                       <p className="text-xs text-muted-foreground">{review.location}</p>
-                      <p className="text-xs text-muted-foreground mt-1">{review.date}</p>
+                      <p className="text-xs text-muted-foreground mt-0.5">{review.date}</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -365,7 +346,7 @@ export default function ContactsPage() {
             </div>
 
             <div className="text-center">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto mb-6">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto mb-6">
                 <div className="text-center">
                   <div className="text-2xl font-bold text-primary">4.8</div>
                   <div className="flex items-center justify-center gap-1 mb-1">
@@ -388,7 +369,7 @@ export default function ContactsPage() {
                   <div className="text-xs text-muted-foreground">Ritornano</div>
                 </div>
               </div>
-              <Button variant="outline" className="bg-transparent hover:bg-primary/10">
+              <Button variant="outline" size="sm" className="bg-transparent hover:bg-primary/10">
                 <MessageCircle className="w-4 h-4 mr-2" />
                 Leggi Tutte le Recensioni
               </Button>

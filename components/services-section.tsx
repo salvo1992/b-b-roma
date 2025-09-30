@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import { Card, CardContent } from "@/components/ui/card"
 import { Wifi, Car, Coffee, Waves, Utensils, MapPin, Space as Spa, Wine, Mountain, Camera, Users } from "lucide-react"
 
 const services = [
@@ -73,15 +72,15 @@ export function ServicesSection() {
           {services.map((service, index) => {
             const Icon = service.icon
             return (
-              <Card
+              <div
                 key={index}
-                className={`group cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-xl ${
+                className={`card-invisible group cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-xl ${
                   hoveredIndex === index ? "animate-float" : ""
                 }`}
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
               >
-                <CardContent className="p-6 text-center">
+                <div className="p-6 text-center">
                   <div
                     className={`w-16 h-16 rounded-full ${service.color} flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform`}
                   >
@@ -89,14 +88,14 @@ export function ServicesSection() {
                   </div>
                   <h3 className="font-semibold text-lg mb-2 text-foreground">{service.title}</h3>
                   <p className="text-muted-foreground text-sm">{service.description}</p>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             )
           })}
         </div>
 
         {/* Additional Services */}
-        <div className="bg-card rounded-2xl p-8 shadow-lg">
+        <div className="card-invisible rounded-2xl p-8 shadow-lg">
           <h3 className="font-display text-2xl font-bold text-center mb-8 text-foreground">Servizi Aggiuntivi</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">

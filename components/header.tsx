@@ -87,82 +87,70 @@ export function Header() {
       {isMenuOpen && (
         <div className="fixed inset-0 z-40 sidebar-overlay animate-fade-in-up" onClick={() => setIsMenuOpen(false)}>
           <div
-            className="fixed top-0 right-0 h-full w-80 sidebar-menu-enhanced shadow-2xl animate-slide-in-right"
+            className="fixed top-0 right-0 h-full w-80 bg-black/80 backdrop-blur-md shadow-2xl animate-slide-in-right"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="p-8 pt-20">
               <nav className="flex flex-col space-y-6">
                 <Link
                   href="/"
-                  className="group flex items-center gap-3 text-sidebar-foreground hover:text-sidebar-primary transition-all duration-300 text-lg font-bold hover:translate-x-2 hover:scale-105"
+                  className="group flex items-center gap-3 text-white hover:text-primary transition-all duration-300 text-lg font-bold hover:translate-x-2 hover:scale-105"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <div className="w-8 h-8 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:rotate-12 border-2 border-white/50">
                     <Home className="w-4 h-4 text-yellow-900" />
                   </div>
-                  <span className="font-cinzel bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent text-shadow-light font-bold">
-                    {t("home")} ✨
-                  </span>
+                  <span className="font-cinzel">{t("home")} ✨</span>
                 </Link>
 
                 <Link
                   href="/camere"
-                  className="group flex items-center gap-3 text-sidebar-foreground hover:text-sidebar-primary transition-all duration-300 text-lg font-bold hover:translate-x-2 hover:scale-105"
+                  className="group flex items-center gap-3 text-white hover:text-primary transition-all duration-300 text-lg font-bold hover:translate-x-2 hover:scale-105"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <div className="w-8 h-8 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:rotate-12 border-2 border-white/50">
                     <Bed className="w-4 h-4 text-yellow-900" />
                   </div>
-                  <span className="font-cinzel bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent text-shadow-light font-bold">
-                    {t("rooms")} 🛏️
-                  </span>
+                  <span className="font-cinzel">{t("rooms")} 🛏️</span>
                 </Link>
 
                 <Link
                   href="/servizi"
-                  className="group flex items-center gap-3 text-sidebar-foreground hover:text-sidebar-primary transition-all duration-300 text-lg font-bold hover:translate-x-2 hover:scale-105"
+                  className="group flex items-center gap-3 text-white hover:text-primary transition-all duration-300 text-lg font-bold hover:translate-x-2 hover:scale-105"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <div className="w-8 h-8 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:rotate-12 border-2 border-white/50">
                     <Crown className="w-4 h-4 text-yellow-900" />
                   </div>
-                  <span className="font-cinzel bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent text-shadow-light font-bold">
-                    {t("services")} 👑
-                  </span>
+                  <span className="font-cinzel">{t("services")} 👑</span>
                 </Link>
 
                 <Link
                   href="/prenota"
-                  className="group flex items-center gap-3 text-sidebar-foreground hover:text-sidebar-primary transition-all duration-300 text-lg font-bold hover:translate-x-2 hover:scale-105"
+                  className="group flex items-center gap-3 text-white hover:text-primary transition-all duration-300 text-lg font-bold hover:translate-x-2 hover:scale-105"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <div className="w-8 h-8 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:rotate-12 border-2 border-white/50">
                     <Calendar className="w-4 h-4 text-yellow-900" />
                   </div>
-                  <span className="font-cinzel bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent text-shadow-light font-bold">
-                    {t("booking")} 📅
-                  </span>
+                  <span className="font-cinzel">{t("booking")} 📅</span>
                 </Link>
 
                 <Link
                   href="/contatti"
-                  className="group flex items-center gap-3 text-sidebar-foreground hover:text-sidebar-primary transition-all duration-300 text-lg font-bold hover:translate-x-2 hover:scale-105"
+                  className="group flex items-center gap-3 text-white hover:text-primary transition-all duration-300 text-lg font-bold hover:translate-x-2 hover:scale-105"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <div className="w-8 h-8 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:rotate-12 border-2 border-white/50">
                     <Phone className="w-4 h-4 text-yellow-900" />
                   </div>
-                  <span className="font-cinzel bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent text-shadow-light font-bold">
-                    {t("contacts")} 📞
-                  </span>
+                  <span className="font-cinzel">{t("contacts")} 📞</span>
                 </Link>
 
-                <div className="border-t border-gradient-to-r from-yellow-400/30 via-yellow-500/50 to-yellow-400/30 pt-6 mt-6">
+                <div className="border-t border-white/20 pt-6 mt-6">
                   <div className="flex items-center gap-2 mb-4">
                     <Sparkles className="w-4 h-4 text-yellow-400 animate-pulse" />
-                    <span className="text-xs font-cinzel bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent text-shadow-light uppercase tracking-wider font-bold">
-                      Account
-                    </span>
+                    <span className="text-xs font-cinzel text-white uppercase tracking-wider font-bold">Account</span>
                     <Sparkles className="w-4 h-4 text-yellow-400 animate-pulse" />
                   </div>
 
@@ -170,53 +158,47 @@ export function Header() {
                     <>
                       <Link
                         href={user.role === "admin" ? "/admin" : "/user"}
-                        className="group flex items-center gap-3 text-sidebar-foreground hover:text-sidebar-primary transition-all duration-300 text-sm font-medium hover:translate-x-2 hover:scale-105 block mb-3"
+                        className="group flex items-center gap-3 text-white hover:text-primary transition-all duration-300 text-sm font-medium hover:translate-x-2 hover:scale-105 block mb-3"
                         onClick={() => setIsMenuOpen(false)}
                       >
                         <div className="w-6 h-6 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center shadow-md group-hover:shadow-lg transition-all duration-300 border border-white/50">
                           <Star className="w-3 h-3 text-yellow-900" />
                         </div>
-                        <span className="font-cinzel bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent text-shadow-light font-bold">
+                        <span className="font-cinzel">
                           {user.role === "admin" ? `${t("admin")} 🎭` : `${t("user")} 🌟`}
                         </span>
                       </Link>
                       <button
                         onClick={handleLogout}
-                        className="group flex items-center gap-3 text-sidebar-foreground hover:text-sidebar-primary transition-all duration-300 text-sm font-medium hover:translate-x-2 hover:scale-105 block"
+                        className="group flex items-center gap-3 text-white hover:text-primary transition-all duration-300 text-sm font-medium hover:translate-x-2 hover:scale-105 block"
                       >
                         <div className="w-6 h-6 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center shadow-md group-hover:shadow-lg transition-all duration-300 border border-white/50">
                           <LogOut className="w-3 h-3 text-yellow-900" />
                         </div>
-                        <span className="font-cinzel bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent text-shadow-light font-bold">
-                          {t("logout")} 👋
-                        </span>
+                        <span className="font-cinzel">{t("logout")} 👋</span>
                       </button>
                     </>
                   ) : (
                     <>
                       <Link
                         href="/login"
-                        className="group flex items-center gap-3 text-sidebar-foreground hover:text-sidebar-primary transition-all duration-300 text-sm font-medium hover:translate-x-2 hover:scale-105 block mb-3"
+                        className="group flex items-center gap-3 text-white hover:text-primary transition-all duration-300 text-sm font-medium hover:translate-x-2 hover:scale-105 block mb-3"
                         onClick={() => setIsMenuOpen(false)}
                       >
                         <div className="w-6 h-6 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center shadow-md group-hover:shadow-lg transition-all duration-300 border border-white/50">
                           <User className="w-3 h-3 text-yellow-900" />
                         </div>
-                        <span className="font-cinzel bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent text-shadow-light font-bold">
-                          {t("login")} 🔑
-                        </span>
+                        <span className="font-cinzel">{t("login")} 🔑</span>
                       </Link>
                       <Link
                         href="/register"
-                        className="group flex items-center gap-3 text-sidebar-foreground hover:text-sidebar-primary transition-all duration-300 text-sm font-medium hover:translate-x-2 hover:scale-105 block"
+                        className="group flex items-center gap-3 text-white hover:text-primary transition-all duration-300 text-sm font-medium hover:translate-x-2 hover:scale-105 block"
                         onClick={() => setIsMenuOpen(false)}
                       >
                         <div className="w-6 h-6 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center shadow-md group-hover:shadow-lg transition-all duration-300 border border-white/50">
                           <Sparkles className="w-3 h-3 text-yellow-900" />
                         </div>
-                        <span className="font-cinzel bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent text-shadow-light font-bold">
-                          Registrati ⭐
-                        </span>
+                        <span className="font-cinzel">Registrati ⭐</span>
                       </Link>
                     </>
                   )}

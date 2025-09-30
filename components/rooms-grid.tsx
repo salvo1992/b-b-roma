@@ -3,7 +3,6 @@
 import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Users, Bed, Bath, Mountain, Star, Heart, Share2 } from "lucide-react"
@@ -130,7 +129,7 @@ export function RoomsGrid() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {rooms.map((room) => (
-        <Card key={room.id} className="group overflow-hidden hover:shadow-xl transition-all duration-300">
+        <div key={room.id} className="card-invisible group overflow-hidden hover:shadow-xl transition-all duration-300">
           <div className="relative overflow-hidden">
             <Image
               src={room.images[0] || "/placeholder.svg"}
@@ -177,7 +176,7 @@ export function RoomsGrid() {
             </div>
           </div>
 
-          <CardContent className="p-6">
+          <div className="p-6">
             <div className="flex items-start justify-between mb-2">
               <h3 className="font-display text-xl font-bold text-foreground group-hover:text-primary transition-colors">
                 {room.name}
@@ -233,8 +232,8 @@ export function RoomsGrid() {
                 <Link href={`/prenota?room=${room.id}`}>Prenota</Link>
               </Button>
             </div>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
       ))}
     </div>
   )

@@ -3,7 +3,6 @@
 import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Users, Bed, Bath, Star, ArrowRight } from "lucide-react"
@@ -69,9 +68,9 @@ export function RoomsPreview() {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
           {rooms.map((room, index) => (
-            <Card
+            <div
               key={room.id}
-              className={`group overflow-hidden transition-all duration-300 hover:shadow-2xl ${
+              className={`card-invisible group overflow-hidden transition-all duration-300 hover:shadow-2xl ${
                 room.featured ? "ring-2 ring-primary/20" : ""
               } ${hoveredRoom === index ? "scale-105" : ""}`}
               onMouseEnter={() => setHoveredRoom(index)}
@@ -93,7 +92,7 @@ export function RoomsPreview() {
                 </div>
               </div>
 
-              <CardContent className="p-6">
+              <div className="p-6">
                 <div className="flex items-center justify-between mb-2">
                   <h3 className="font-display text-xl font-bold text-foreground">{room.name}</h3>
                   <div className="flex items-center gap-1">
@@ -143,8 +142,8 @@ export function RoomsPreview() {
                     <Link href="/prenota">Prenota</Link>
                   </Button>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           ))}
         </div>
 
