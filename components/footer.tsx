@@ -119,27 +119,11 @@ export function Footer() {
               <p>© 2025 Villa Bella Vista. Tutti i diritti riservati.</p>
             </div>
 
-            <div className="flex flex-col md:flex-row items-center gap-4">
-              <div className="flex items-center gap-2">
-                <span>Sviluppato da</span>
-                <div className="flex items-center gap-1">
-                  <Image
-                    src="/images/viking-logo.png"
-                    alt="The Viking of the Web"
-                    width={16}
-                    height={16}
-                    className="rounded"
-                  />
-                  <span className="font-medium">The Viking of the Web</span>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-2">
-                <span>per conto di</span>
-                <div className="flex items-center gap-1">
-                  <Image src="/images/ekobit-logo.png" alt="EkoBit S.r.l." width={16} height={16} className="rounded" />
-                  <span className="font-medium">EkoBit S.r.l.</span>
-                </div>
+            <div className="flex items-center gap-2">
+              <span>Sviluppato da</span>
+              <div className="flex items-center gap-1">
+                <Image src="/images/ekobit-logo.png" alt="EkoBit S.r.l." width={16} height={16} className="rounded" />
+                <span className="font-medium">EkoBit S.r.l.</span>
               </div>
             </div>
           </div>

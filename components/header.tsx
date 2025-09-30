@@ -22,21 +22,27 @@ export function Header() {
     <>
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border/50">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-16">
-            {/* Logo */}
-            <Link href="/" className="flex items-center space-x-3 group">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
-                <span className="text-primary-foreground font-bold text-lg font-cinzel">VB</span>
+          <div className="flex items-center justify-between h-16 gap-2">
+            {/* Logo - Always visible with responsive text size */}
+            <Link href="/" className="flex items-center space-x-2 group flex-shrink-0">
+              <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                <span className="text-primary-foreground font-bold text-base md:text-lg font-cinzel">VB</span>
               </div>
-              <span className="font-cinzel text-xl font-bold text-roman-gradient">Villa Bella Vista</span>
+              <span className="font-cinzel text-sm sm:text-base md:text-xl font-bold text-roman-gradient whitespace-nowrap">
+                Villa Bella Vista
+              </span>
             </Link>
 
-            {/* Right side - Language, User, and Book Now */}
-            <div className="flex items-center space-x-4">
-              <LanguageToggle />
+            {/* Right side - Reorganized for mobile: hide language/user on small screens, always show Book and Menu */}
+            <div className="flex items-center gap-2 md:gap-4">
+              {/* Language Toggle - Hidden on mobile */}
+              <div className="hidden md:block">
+                <LanguageToggle />
+              </div>
 
+              {/* User Section - Hidden on mobile */}
               {user ? (
-                <div className="flex items-center gap-2">
+                <div className="hidden md:flex items-center gap-2">
                   <Link href={user.role === "admin" ? "/admin" : "/user"}>
                     <Button variant="ghost" size="sm" className="flex items-center gap-2">
                       <User className="h-4 w-4" />
@@ -49,7 +55,7 @@ export function Header() {
                   </Button>
                 </div>
               ) : (
-                <Link href="/login">
+                <Link href="/login" className="hidden md:block">
                   <Button variant="ghost" size="sm" className="flex items-center gap-2">
                     <User className="h-4 w-4" />
                     <span className="hidden sm:inline">Accedi</span>
@@ -57,17 +63,20 @@ export function Header() {
                 </Link>
               )}
 
+              {/* Book Now Button - Always visible, responsive size */}
               <Button
                 asChild
-                className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 animate-pulse-slow"
+                size="sm"
+                className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 animate-pulse-slow text-xs sm:text-sm px-3 sm:px-4"
               >
                 <Link href="/prenota">{t("bookNow")}</Link>
               </Button>
 
+              {/* Menu Toggle - Always visible */}
               <Button
                 variant="ghost"
                 size="sm"
-                className="relative group hover:bg-primary/10 transition-all duration-300"
+                className="relative group hover:bg-primary/10 transition-all duration-300 flex-shrink-0"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
               >
                 <div className="relative w-6 h-6 flex items-center justify-center">
